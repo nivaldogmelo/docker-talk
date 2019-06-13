@@ -11,8 +11,8 @@ def home_page():
 @app.route('/looqers')
 def get_looqers():
     req = request.get_json()
-    looqers = requests.get('http://192.168.0.2:3000')
-    amigos = json.loads(looqers.content)
-    return amigos[0]
+    looqers = requests.get('http://node-app:3000')
+    var = json.loads(looqers.content.decode('utf-8'))
+    return var[0]
 
 app.run(host='0.0.0.0')
